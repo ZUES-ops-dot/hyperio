@@ -85,3 +85,7 @@ path = "src/main.rs"
 [profile.release]
 opt-level = 3
 lto = true
+
+[profile.dev]
+lto = true
+codegen-units = 1
