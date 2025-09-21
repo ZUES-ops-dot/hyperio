@@ -1,0 +1,37 @@
+# Rust build artifacts
+/target/
+**/*.rs.bk
+Cargo.lock
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Reports (generated)
+/reports/
+*.log
+
+# Plugin binaries (built separately)
+/plugins/*.wasm
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+
+# ML models (large files)
+/models/*.onnx
+
+# Python / tooling caches
+.pytest_cache/
+__pycache__/
+.ruff_cache/
+
+# Temporary files
+*.tmp
+*.temp
