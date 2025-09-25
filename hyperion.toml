@@ -1,0 +1,88 @@
+# HyperionScan Configuration File
+# ================================
+# This file configures the local security scanner.
+
+[scan]
+# Directories and patterns to exclude from scanning
+exclude = [
+    "node_modules",
+    "target",
+    ".git",
+    "build",
+    "dist",
+    "vendor",
+    "__pycache__",
+    "*.min.js",
+    "*.map"
+]
+
+# Languages to scan for (leave empty for all supported)
+languages = [
+    "solidity",
+    "rust",
+    "move",
+    "vyper",
+    "javascript",
+    "typescript"
+]
+
+# Maximum file size to scan (in bytes)
+max_file_size = 10485760  # 10 MB
+
+# Follow symbolic links during scanning
+follow_symlinks = false
+
+[plugins]
+# Directory containing WASM plugins
+dir = "./plugins"
+
+# Enabled plugins (by name, matching plugin.toml [plugin].name)
+# Leave empty to enable all plugins in the directory
+# Types: "builtin" (Rust code), "cli" (process), "wasm" (WebAssembly)
+enabled = [
+    "solidity_scanner",   # builtin - Solidity smart contract scanner
+    "secret_scanner",     # builtin - Secret/credential detection
+    "pattern_scanner"     # cli - Generic pattern matching (Python)
+]
+
+# Plugin execution timeout (seconds)
+timeout_seconds = 30
+
+# Maximum memory per plugin (MB)
+max_memory_mb = 256
+
+[report]
+# Output formats to generate
+formats = ["json", "markdown"]
+
+# Output directory for reports
+output_dir = "./reports"
+
+# Include code snippets in reports
+include_snippets = true
+
+# Maximum lines for code snippets
+snippet_lines = 5
+
+[fuzzing]
+# Enable fuzzing during scan (use --fuzz flag to override)
+enabled = false
+
+# Number of fuzzing iterations
+iterations = 1000
+
+# Fuzzing timeout per target (seconds)
+timeout_seconds = 60
+
+# Seed for reproducible fuzzing (optional)
+# seed = 12345
+
+[ml]
+# Enable ML-based anomaly detection (requires --features ml)
+enabled = false
+
+# Path to ONNX model file
+# model_path = "./models/anomaly_detector.onnx"
+
+# Anomaly detection threshold (0.0 - 1.0)
+threshold = 0.7
