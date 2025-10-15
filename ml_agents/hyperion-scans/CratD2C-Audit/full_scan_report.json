@@ -1,0 +1,41 @@
+{
+  "repository": "https://github.com/samaros/CratD2C",
+  "audit_date": "2025-11-28",
+  "scanner": "HyperionScan",
+  "analysis_time_seconds": 108.25049996376038,
+  "summary": {
+    "total_files": 5,
+    "total_functions": 20,
+    "total_variables": 24,
+    "critical_count": 0,
+    "high_count": 1,
+    "knowledge_graph_nodes": 50,
+    "knowledge_graph_edges": 169
+  },
+  "critical_vulnerabilities": [],
+  "high_severity_by_type": {
+    "MISSING_ACCESS_CONTROL": 1
+  },
+  "embedding_matches": {
+    "tx_origin_auth": 2,
+    "dangerous_delegatecall": 2
+  },
+  "entry_points": [
+    "calculateReferralRefundAmount",
+    "buyCratTokens",
+    "pause",
+    "unpause",
+    "changeRefundInterest",
+    "withdrawTokens",
+    "calculateStableAmount",
+    "calculateTokensAmount",
+    "buyCratTokens",
+    "pause",
+    "changeRefundInterest",
+    "withdrawTokens",
+    "calculateStableAmount",
+    "calculateTokensAmount",
+    "swap"
+  ],
+  "llm_analysis": " {\n    \"suspicious_regions\": [\n        {\n            \"file\": \"..\\\\CratD2C-contracts\\\\contracts\\\\CratCrowdSale.sol\",\n            \"lines\": \"5-10\",\n            \"pattern\": \"external call\",\n            \"risk_score\": 0.6,\n            \"reason\": \"External calls to _cratToken and _usdt/_usdc addresses are made without checking if they implement specific interfaces or have certain functions, which could potentially lead to failures or security vulnerabilities.\"\n        },\n        {\n            \"file\": \".."
+}

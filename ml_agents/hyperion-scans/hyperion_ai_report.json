@@ -1,0 +1,191 @@
+{
+  "target": "..\\test-contracts\\src",
+  "analysis_time_seconds": 1405.517163991928,
+  "stages": {
+    "hunter": {
+      "regions": 1426,
+      "suspicious": 50
+    },
+    "knowledge_graph": {
+      "nodes": 2875,
+      "edges": 378431
+    },
+    "embeddings": {
+      "total": 1196
+    },
+    "symbolic": {
+      "critical": 3,
+      "high": 56
+    },
+    "llm": {
+      "available": true
+    }
+  },
+  "critical_findings": [
+    {
+      "violation_type": "REENTRANCY_LOOP",
+      "severity": "critical",
+      "path_id": "direct_scan",
+      "line_number": 113,
+      "description": "CRITICAL: External transfer inside loop - high reentrancy/DoS risk",
+      "taint_path": [
+        "loop_start@106",
+        "external_call@113"
+      ],
+      "constraints": [],
+      "exploit_conditions": [
+        "1. Attacker can manipulate loop iterations",
+        "2. Each iteration makes external call",
+        "3. Attacker re-enters or causes revert",
+        "4. Can DoS or drain funds"
+      ],
+      "file_path": "..\\test-contracts\\src\\DefaultTimeLock.sol"
+    },
+    {
+      "violation_type": "MISSING_ACCESS_CONTROL",
+      "severity": "critical",
+      "path_id": "path_0",
+      "line_number": 6,
+      "description": "ETH transfer without access control",
+      "taint_path": [],
+      "constraints": [],
+      "exploit_conditions": [],
+      "file_path": "..\\test-contracts\\src\\iETH.sol"
+    },
+    {
+      "violation_type": "MISSING_ACCESS_CONTROL",
+      "severity": "critical",
+      "path_id": "path_0",
+      "line_number": 15,
+      "description": "ETH transfer without access control",
+      "taint_path": [],
+      "constraints": [],
+      "exploit_conditions": [],
+      "file_path": "..\\test-contracts\\src\\iETHV2.sol"
+    }
+  ],
+  "high_findings": [
+    {
+      "violation_type": "MISSING_ACCESS_CONTROL",
+      "severity": "high",
+      "path_id": "path_0",
+      "line_number": 4,
+      "description": "Critical state change without access control",
+      "taint_path": [],
+      "constraints": [],
+      "exploit_conditions": [],
+      "file_path": "..\\test-contracts\\src\\Controller.sol"
+    },
+    {
+      "violation_type": "MISSING_ACCESS_CONTROL",
+      "severity": "high",
+      "path_id": "path_0",
+      "line_number": 4,
+      "description": "Critical state change without access control",
+      "taint_path": [],
+      "constraints": [],
+      "exploit_conditions": [],
+      "file_path": "..\\test-contracts\\src\\Controller.sol"
+    },
+    {
+      "violation_type": "MISSING_ACCESS_CONTROL",
+      "severity": "high",
+      "path_id": "path_0",
+      "line_number": 4,
+      "description": "Critical state change without access control",
+      "taint_path": [],
+      "constraints": [],
+      "exploit_conditions": [],
+      "file_path": "..\\test-contracts\\src\\Controller.sol"
+    },
+    {
+      "violation_type": "MISSING_ACCESS_CONTROL",
+      "severity": "high",
+      "path_id": "path_0",
+      "line_number": 4,
+      "description": "Critical state change without access control",
+      "taint_path": [],
+      "constraints": [],
+      "exploit_conditions": [],
+      "file_path": "..\\test-contracts\\src\\Controller.sol"
+    },
+    {
+      "violation_type": "MISSING_ACCESS_CONTROL",
+      "severity": "high",
+      "path_id": "path_0",
+      "line_number": 4,
+      "description": "Critical state change without access control",
+      "taint_path": [],
+      "constraints": [],
+      "exploit_conditions": [],
+      "file_path": "..\\test-contracts\\src\\Controller.sol"
+    },
+    {
+      "violation_type": "MISSING_ACCESS_CONTROL",
+      "severity": "high",
+      "path_id": "path_0",
+      "line_number": 12,
+      "description": "Critical state change without access control",
+      "taint_path": [],
+      "constraints": [],
+      "exploit_conditions": [],
+      "file_path": "..\\test-contracts\\src\\Controller.sol"
+    },
+    {
+      "violation_type": "MISSING_ACCESS_CONTROL",
+      "severity": "high",
+      "path_id": "path_0",
+      "line_number": 28,
+      "description": "Critical state change without access control",
+      "taint_path": [],
+      "constraints": [
+        "_shortfall > 0",
+        "_repayAmount <= _maxRepay"
+      ],
+      "exploit_conditions": [
+        "Path requires: _shortfall > 0",
+        "Path requires: _repayAmount <= _maxRepay"
+      ],
+      "file_path": "..\\test-contracts\\src\\Controller.sol"
+    },
+    {
+      "violation_type": "MISSING_ACCESS_CONTROL",
+      "severity": "high",
+      "path_id": "path_0",
+      "line_number": 25,
+      "description": "Critical state change without access control",
+      "taint_path": [],
+      "constraints": [],
+      "exploit_conditions": [],
+      "file_path": "..\\test-contracts\\src\\Controller.sol"
+    },
+    {
+      "violation_type": "MISSING_ACCESS_CONTROL",
+      "severity": "high",
+      "path_id": "path_0",
+      "line_number": 25,
+      "description": "Critical state change without access control",
+      "taint_path": [],
+      "constraints": [],
+      "exploit_conditions": [],
+      "file_path": "..\\test-contracts\\src\\ControllerStock.sol"
+    },
+    {
+      "violation_type": "MISSING_ACCESS_CONTROL",
+      "severity": "high",
+      "path_id": "path_0",
+      "line_number": 46,
+      "description": "Critical state change without access control",
+      "taint_path": [],
+      "constraints": [
+        "_shortfall > 0",
+        "_repayAmount <= _maxRepay"
+      ],
+      "exploit_conditions": [
+        "Path requires: _shortfall > 0",
+        "Path requires: _repayAmount <= _maxRepay"
+      ],
+      "file_path": "..\\test-contracts\\src\\ControllerV2.sol"
+    }
+  ]
+}
