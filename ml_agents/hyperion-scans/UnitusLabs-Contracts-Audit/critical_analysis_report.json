@@ -1,0 +1,127 @@
+{
+  "analysis_time": 0.07725095748901367,
+  "contracts_analyzed": [
+    "..\\test-contracts\\src\\DefaultTimeLock.sol",
+    "..\\test-contracts\\src\\iETH.sol",
+    "..\\test-contracts\\src\\iETHV2.sol"
+  ],
+  "summary": {
+    "critical": 3,
+    "high": 0,
+    "functions": 47,
+    "entry_points": 36
+  },
+  "vulnerabilities": [
+    {
+      "type": "REENTRANCY_LOOP",
+      "severity": "critical",
+      "file": "DefaultTimeLock.sol",
+      "line": 113,
+      "description": "CRITICAL: External transfer inside loop - high reentrancy/DoS risk",
+      "exploit_conditions": [
+        "1. Attacker can manipulate loop iterations",
+        "2. Each iteration makes external call",
+        "3. Attacker re-enters or causes revert",
+        "4. Can DoS or drain funds"
+      ]
+    },
+    {
+      "type": "MISSING_ACCESS_CONTROL",
+      "severity": "critical",
+      "file": "iETH.sol",
+      "line": 6,
+      "description": "ETH transfer without access control",
+      "exploit_conditions": []
+    },
+    {
+      "type": "MISSING_ACCESS_CONTROL",
+      "severity": "critical",
+      "file": "iETHV2.sol",
+      "line": 15,
+      "description": "ETH transfer without access control",
+      "exploit_conditions": []
+    }
+  ],
+  "entry_points": [
+    {
+      "function": "isController",
+      "file": "..\\test-contracts\\src\\DefaultTimeLock.sol"
+    },
+    {
+      "function": "initialize",
+      "file": "..\\test-contracts\\src\\DefaultTimeLock.sol"
+    },
+    {
+      "function": "createAgreement",
+      "file": "..\\test-contracts\\src\\DefaultTimeLock.sol"
+    },
+    {
+      "function": "claim",
+      "file": "..\\test-contracts\\src\\DefaultTimeLock.sol"
+    },
+    {
+      "function": "freezeAgreements",
+      "file": "..\\test-contracts\\src\\DefaultTimeLock.sol"
+    },
+    {
+      "function": "unfreezeAgreements",
+      "file": "..\\test-contracts\\src\\DefaultTimeLock.sol"
+    },
+    {
+      "function": "releaseAgreements",
+      "file": "..\\test-contracts\\src\\DefaultTimeLock.sol"
+    },
+    {
+      "function": "freezeClaim",
+      "file": "..\\test-contracts\\src\\DefaultTimeLock.sol"
+    },
+    {
+      "function": "unfreezeClaim",
+      "file": "..\\test-contracts\\src\\DefaultTimeLock.sol"
+    },
+    {
+      "function": "getAgreement",
+      "file": "..\\test-contracts\\src\\DefaultTimeLock.sol"
+    },
+    {
+      "function": "getAgreementIds",
+      "file": "..\\test-contracts\\src\\DefaultTimeLock.sol"
+    },
+    {
+      "function": "initialize",
+      "file": "..\\test-contracts\\src\\iETH.sol"
+    },
+    {
+      "function": "mint",
+      "file": "..\\test-contracts\\src\\iETH.sol"
+    },
+    {
+      "function": "mintForSelfAndEnterMarket",
+      "file": "..\\test-contracts\\src\\iETH.sol"
+    },
+    {
+      "function": "redeem",
+      "file": "..\\test-contracts\\src\\iETH.sol"
+    },
+    {
+      "function": "redeemUnderlying",
+      "file": "..\\test-contracts\\src\\iETH.sol"
+    },
+    {
+      "function": "borrow",
+      "file": "..\\test-contracts\\src\\iETH.sol"
+    },
+    {
+      "function": "repayBorrow",
+      "file": "..\\test-contracts\\src\\iETH.sol"
+    },
+    {
+      "function": "repayBorrowBehalf",
+      "file": "..\\test-contracts\\src\\iETH.sol"
+    },
+    {
+      "function": "liquidateBorrow",
+      "file": "..\\test-contracts\\src\\iETH.sol"
+    }
+  ]
+}

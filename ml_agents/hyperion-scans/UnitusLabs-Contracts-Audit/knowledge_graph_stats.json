@@ -1,0 +1,36 @@
+{
+  "repository": "https://github.com/UnitusLabs/Contracts",
+  "analysis_date": "2025-11-28",
+  "graph_metrics": {
+    "total_nodes": 2875,
+    "total_edges": 76980,
+    "contracts": 329,
+    "functions": 1656,
+    "variables": 1308,
+    "entry_points": 1320,
+    "sensitive_operations": 11
+  },
+  "node_breakdown": {
+    "CONTRACT": 329,
+    "FUNCTION": 1656,
+    "VARIABLE": 1308,
+    "EXTERNAL_CALL": 11
+  },
+  "edge_breakdown": {
+    "CALLS": 76826,
+    "initial_references": 154
+  },
+  "top_contracts_by_complexity": [
+    {"name": "Controller.sol", "functions": 79, "variables": 49, "call_edges": 5518},
+    {"name": "ControllerV2.sol", "functions": 83, "variables": 94, "call_edges": 5270},
+    {"name": "ControllerMiniPool.sol", "functions": 62, "variables": 48, "call_edges": 5270},
+    {"name": "RewardDistributorV3.sol", "functions": 45, "variables": 25, "call_edges": 1080},
+    {"name": "iToken.sol", "functions": 42, "variables": 23, "call_edges": 800}
+  ],
+  "attack_surface": {
+    "public_functions": 850,
+    "external_functions": 470,
+    "payable_functions": 45,
+    "state_modifying": 620
+  }
+}

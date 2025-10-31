@@ -1,0 +1,86 @@
+{
+  "repository": "https://github.com/UnitusLabs/Contracts",
+  "audit_date": "2025-11-28",
+  "scanner": "HyperionScan",
+  "summary": {
+    "total_files": 133,
+    "total_functions": 1656,
+    "critical_count": 3,
+    "high_count": 56
+  },
+  "critical_vulnerabilities": [
+    {
+      "id": "VULN-001",
+      "type": "REENTRANCY_LOOP",
+      "severity": "critical",
+      "cvss_estimate": "8.5",
+      "file": "src/DefaultTimeLock.sol",
+      "line": 113,
+      "function": "releaseAgreements",
+      "description": "External .transfer() call inside a for loop without reentrancy guard",
+      "impact": "Funds can be drained through reentrancy attack or DoS via revert",
+      "exploit_steps": [
+        "1. Attacker creates malicious contract with fallback that reverts or re-enters",
+        "2. Attacker gets added as beneficiary in one of the agreements",
+        "3. When releaseAgreements() is called, attacker's fallback triggers",
+        "4. If re-entering: drain funds before state update",
+        "5. If reverting: DoS the entire batch release"
+      ],
+      "recommendation": "Add nonReentrant modifier, use Checks-Effects-Interactions pattern",
+      "references": [
+        "https://swcregistry.io/docs/SWC-107",
+        "https://consensys.github.io/smart-contract-best-practices/attacks/reentrancy/"
+      ]
+    },
+    {
+      "id": "VULN-002",
+      "type": "MISSING_ACCESS_CONTROL",
+      "severity": "critical",
+      "cvss_estimate": "7.5",
+      "file": "src/iETH.sol",
+      "line": 6,
+      "function": "multiple",
+      "description": "ETH transfer operations without verified access control",
+      "impact": "Unauthorized ETH transfers possible",
+      "entry_points": [
+        "mint()",
+        "mintForSelfAndEnterMarket()",
+        "redeem()",
+        "redeemUnderlying()",
+        "borrow()",
+        "repayBorrow()",
+        "liquidateBorrow()"
+      ],
+      "recommendation": "Verify access control modifiers on all ETH-handling functions",
+      "references": [
+        "https://swcregistry.io/docs/SWC-105"
+      ]
+    },
+    {
+      "id": "VULN-003",
+      "type": "MISSING_ACCESS_CONTROL",
+      "severity": "critical",
+      "cvss_estimate": "7.5",
+      "file": "src/iETHV2.sol",
+      "line": 15,
+      "function": "multiple",
+      "description": "ETH transfer operations without verified access control",
+      "impact": "Unauthorized ETH transfers possible",
+      "recommendation": "Same as VULN-002",
+      "references": [
+        "https://swcregistry.io/docs/SWC-105"
+      ]
+    }
+  ],
+  "high_severity_summary": {
+    "MISSING_ACCESS_CONTROL": 56,
+    "note": "Many may be intentional admin-only functions - requires manual review"
+  },
+  "embedding_matches": {
+    "dangerous_delegatecall": 79,
+    "tx_origin_auth": 51,
+    "classic_reentrancy": 32,
+    "unchecked_send": 26,
+    "missing_access_control": 5
+  }
+}
