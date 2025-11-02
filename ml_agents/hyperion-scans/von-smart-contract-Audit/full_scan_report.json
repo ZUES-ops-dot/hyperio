@@ -1,0 +1,23 @@
+{
+  "repository": "https://github.com/vameon/von-smart-contract",
+  "audit_date": "2025-11-28",
+  "scanner": "HyperionScan",
+  "analysis_time_seconds": 128.39219045639038,
+  "summary": {
+    "total_files": 2,
+    "total_functions": 5,
+    "total_variables": 1,
+    "critical_count": 0,
+    "high_count": 0,
+    "knowledge_graph_nodes": 8,
+    "knowledge_graph_edges": 20
+  },
+  "critical_vulnerabilities": [],
+  "high_severity": [],
+  "embedding_matches": {},
+  "entry_points": [
+    "transferWithFee",
+    "getFeeCollector"
+  ],
+  "llm_analysis": "ERROR: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=120)"
+}
