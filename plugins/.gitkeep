@@ -1,0 +1,12 @@
+# Place your .wasm plugins in this directory
+# 
+# Example plugins:
+#   solidity_scanner.wasm
+#   rust_scanner.wasm  
+#   secret_scanner.wasm
+#   pattern_scanner.wasm
+#
+# Build a plugin:
+#   cd plugins/my_plugin
+#   cargo build --target wasm32-wasi --release
+#   cp target/wasm32-wasi/release/my_plugin.wasm ../

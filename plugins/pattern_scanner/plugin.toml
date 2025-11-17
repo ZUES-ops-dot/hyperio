@@ -1,0 +1,23 @@
+# Pattern Scanner Plugin Manifest
+[plugin]
+name = "pattern_scanner"
+version = "0.1.0"
+description = "Generic pattern-based security scanner"
+author = "HyperionScan"
+
+# Plugin type: "cli" (spawns process) or "wasm" (loads .wasm)
+type = "cli"
+
+# For CLI plugins: the command to run
+command = "python"
+args = ["scanner.py"]
+
+# Alternatively for compiled CLI:
+# command = "./pattern_scanner.exe"
+# args = []
+
+# Supported languages (empty = all)
+languages = []
+
+# Enabled by default
+enabled = true

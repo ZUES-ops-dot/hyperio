@@ -1,0 +1,18 @@
+# Example Plugin Manifest
+[plugin]
+name = "example_plugin"
+version = "0.1.0"
+description = "Example/template plugin for HyperionScan"
+author = "HyperionScan"
+
+# Plugin type: "wasm" (WebAssembly module)
+type = "wasm"
+
+# Path to .wasm file (relative to plugin directory)
+wasm_file = "example_plugin.wasm"
+
+# Supported languages (empty = all)
+languages = []
+
+# Disabled by default (it's a template)
+enabled = false
