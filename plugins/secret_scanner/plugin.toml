@@ -1,0 +1,15 @@
+# Secret Scanner Plugin Manifest
+[plugin]
+name = "secret_scanner"
+version = "0.1.0"
+description = "Detects hardcoded secrets, API keys, and credentials"
+author = "HyperionScan"
+
+# Plugin type: "builtin" (Rust code)
+type = "builtin"
+
+# Supported languages (empty = all)
+languages = []
+
+# Enabled by default
+enabled = true
