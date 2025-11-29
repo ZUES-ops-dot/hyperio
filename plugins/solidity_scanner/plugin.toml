@@ -1,0 +1,15 @@
+# Solidity Scanner Plugin Manifest
+[plugin]
+name = "solidity_scanner"
+version = "0.1.0"
+description = "Solidity smart contract security scanner"
+author = "HyperionScan"
+
+# Plugin type: "builtin" (Rust code), "cli" (process), or "wasm"
+type = "builtin"
+
+# Supported languages
+languages = ["solidity"]
+
+# Enabled by default
+enabled = true
