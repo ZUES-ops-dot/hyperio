@@ -1,7 +1,7 @@
 # HyperionScan — Local-First Smart Contract Security Scanner
 
 ![Rust](https://img.shields.io/badge/Rust-1.75+-orange?logo=rust&logoColor=white)
-![Tree-sitter](https://img.shields.io/badge/Tree--sitter-AST-FFCA28)
+![tree-sitter](https://img.shields.io/badge/Tree--sitter-AST-FFCA28)
 ![WASM](https://img.shields.io/badge/WASM-plugins-654FF0?logo=webassembly)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Status](https://img.shields.io/badge/status-beta-blue)
@@ -25,7 +25,7 @@ Cloud-hosted security scanners (Snyk, Mythril, Slither) require uploading source
 
 - **100% local** — no outbound network calls, no telemetry, no code exfiltration
 - **Composable WASM plugins** — sandboxed plugin runtime via `wasmtime`; ship custom rules without recompiling the host
-- **Tree-sitter AST analysis** — precise parsing for **Solidity, Rust, Move, Vyper, Cairo, JavaScript, TypeScript**
+- **tree-sitter AST analysis** — precise parsing for **Solidity, Rust, Move, Vyper, Cairo, JavaScript, TypeScript**
 - **Built-in fuzzing** — deterministic per-target fuzzer with iteration + timeout controls
 - **Artifact-quality reports** — JSON for CI pipelines, Markdown for PRs, PDF for client deliverables; severity triage + snippet excerpts
 - **Optional ML / LLM agents** — heuristic detection blended with AI triage on critical findings (opt-in, still local: Ollama + local model)
@@ -72,7 +72,7 @@ Cloud-hosted security scanners (Snyk, Mythril, Slither) require uploading source
 | Layer | Tech |
 |-------|------|
 | Core | Rust (2021 edition), `tokio` runtime |
-| Parsing | Tree-sitter grammars per language |
+| Parsing | tree-sitter grammars per language |
 | Plugins | `wasmtime` WASM sandbox |
 | ML | `candle` for local inference (optional) |
 | LLM | Ollama integration (optional) |
