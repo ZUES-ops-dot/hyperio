@@ -1,4 +1,4 @@
-# HyperionScan — Local-First Smart Contract Security Scanner
+# HyperionScan -- Local-First Smart Contract Security Scanner
 
 ![Rust](https://img.shields.io/badge/Rust-1.75+-orange?logo=rust&logoColor=white)
 ![tree-sitter](https://img.shields.io/badge/Tree--sitter-AST-FFCA28)
@@ -23,12 +23,12 @@ Cloud-hosted security scanners (Snyk, Mythril, Slither) require uploading source
 
 ## Highlights
 
-- **100% local** — no outbound network calls, no telemetry, no code exfiltration
-- **Composable WASM plugins** — sandboxed plugin runtime via `wasmtime`; ship custom rules without recompiling the host
-- **tree-sitter AST analysis** — precise parsing for **Solidity, Rust, Move, Vyper, Cairo, JavaScript, TypeScript**
-- **Built-in fuzzing** — deterministic per-target fuzzer with iteration + timeout controls
-- **Artifact-quality reports** — JSON for CI pipelines, Markdown for PRs, PDF for client deliverables; severity triage + snippet excerpts
-- **Optional ML / LLM agents** — heuristic detection blended with AI triage on critical findings (opt-in, still local: Ollama + local model)
+- **100% local** -- no outbound network calls, no telemetry, no code exfiltration
+- **Composable WASM plugins** -- sandboxed plugin runtime via `wasmtime`; ship custom rules without recompiling the host
+- **tree-sitter AST analysis** -- precise parsing for **Solidity, Rust, Move, Vyper, Cairo, JavaScript, TypeScript**
+- **Built-in fuzzing** -- deterministic per-target fuzzer with iteration + timeout controls
+- **Artifact-quality reports** -- JSON for CI pipelines, Markdown for PRs, PDF for client deliverables; severity triage + snippet excerpts
+- **Optional ML / LLM agents** -- heuristic detection blended with AI triage on critical findings (opt-in, still local: Ollama + local model)
 
 ## Architecture
 
@@ -58,7 +58,7 @@ Cloud-hosted security scanners (Snyk, Mythril, Slither) require uploading source
                               ┌──────────────────────┐
                               │ Optional ML / LLM    │
                               │ agent (local Ollama) │
-                              │ — triages criticals  │
+                              │ -- triages criticals  │
                               └──────────┬───────────┘
                                          ▼
                               ┌──────────────────────┐
@@ -156,8 +156,8 @@ tests/            Integration tests with fixture inputs
 
 ## Roadmap
 
-See [Issues](https://github.com/ZUES-ops-dot/hyperio/issues) — WASM browser build, parallelized traversal with `rayon`, GitHub Action wrapper, false-positive reduction on `*_KEY_ID`-style env vars.
+See [Issues](https://github.com/ZUES-ops-dot/hyperio/issues) -- WASM browser build, parallelized traversal with `rayon`, GitHub Action wrapper, false-positive reduction on `*_KEY_ID`-style env vars.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT -- see [LICENSE](LICENSE).
